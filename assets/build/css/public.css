@@ -1,0 +1,979 @@
+@charset "UTF-8";
+/*---------------------------------
+		Colors Variables
+-----------------------------------*/
+/*---------------------------------
+		Opacity
+-----------------------------------*/
+/*---------------------------------
+		Gradient
+-----------------------------------*/
+/*---------------------------------
+		Element Colors
+-----------------------------------*/
+/*---------------------------------
+		Border Colors
+-----------------------------------*/
+/*----------------
+		Font
+------------------*/
+/*---------------------------------
+		Body Text Font Sizes
+-----------------------------------*/
+/**
+ * Add font scale with media query as per configuration on $body-text
+ * Ex: @include body-text( h1 );
+ * This will add font-size and line-height with different breakpoints.
+ */
+.fwp-button {
+  --bg-button-primary: #283fcd;
+  --bg-button-secondary: #2271b1;
+  display: inline-block;
+  font-weight: 500;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  color: #fff;
+  border: 0;
+  text-decoration: none;
+  background: var(--bg-button-primary);
+  padding: 0.4375rem 0.75rem;
+  font-size: 0.8125rem;
+  line-height: 0.6575rem;
+  border-radius: 3px;
+  transition: background-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.fwp-button:focus {
+  outline: unset;
+  box-shadow: none;
+}
+.fwp-button:hover {
+  color: #fff;
+  text-decoration: none;
+  background: var(--bg-button-secondary);
+}
+.fwp-button:not(:disabled):not(.disabled) {
+  cursor: pointer;
+}
+.fwp-button__outline {
+  color: var(--bg-button-primary);
+  background: none;
+  border: 1px solid;
+}
+.fwp-button__outline:hover {
+  color: var(--bg-button-secondary);
+  background: rgba(147, 0, 60, 0.04);
+}
+.fwp-button span {
+  position: relative;
+  display: block;
+  top: 2px;
+}
+.fwp-button.fwp-btn-icononly {
+  position: relative;
+  padding: 5px;
+  border: 0.2px solid var(--bg-button-primary);
+  background: none;
+  color: var(--bg-button-primary);
+}
+.fwp-button.fwp-btn-icononly:before {
+  width: 20px;
+  height: 20px;
+  speak: never;
+  line-height: 1;
+  font-size: 20px;
+  font-weight: 400;
+  font-style: normal;
+  text-align: center;
+  vertical-align: top;
+  text-transform: none;
+  text-rendering: auto;
+  display: inline-block;
+  font-family: dashicons;
+  text-decoration: inherit;
+  transition: color 0.1s ease-in;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.fwp-button.fwp-btn-icononly.on:before, .fwp-button.fwp-btn-icononly[data-status=on]:before {
+  content: "\f15e";
+}
+.fwp-button.fwp-btn-icononly.off:before, .fwp-button.fwp-btn-icononly[data-status=off]:before {
+  content: "\f158";
+}
+.fwp-button.fwp-btn-icononly.loading, .fwp-button.fwp-btn-icononly[data-status=loading] {
+  background: none;
+  height: 25px;
+  width: 25px;
+  display: inline-block;
+  position: relative;
+}
+.fwp-button.fwp-btn-icononly.loading:before, .fwp-button.fwp-btn-icononly[data-status=loading]:before {
+  content: "";
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 5px solid #e1dada;
+  animation: fwp-anim-spin 1s linear infinite;
+  border-top: 5px solid var(--bg-button-primary);
+}
+
+.btn {
+  --card-btn-padding-x: 1.5rem;
+  --card-btn-padding-y: 0.5rem;
+  --card-btn-font-family: ;
+  --card-btn-font-size: 1rem;
+  --card-btn-font-weight: 400;
+  --card-btn-line-height: 1.5;
+  --card-btn-color: #6D6D6D;
+  --card-btn-bg: transparent;
+  --card-position: relative;
+  --card-btn-border-width: 1px;
+  --card-btn-border-color: transparent;
+  --card-btn-border-radius: 0.25rem;
+  --card-btn-box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0);
+  --card-btn-disabled-opacity: 0.65;
+  --card-btn-focus-box-shadow: 0 0 0 0rem rgba(var(--card-btn-focus-shadow-rgb), .5);
+  display: inline-block;
+  padding: var(--card-btn-padding-y) var(--card-btn-padding-x);
+  font-family: var(--card-btn-font-family);
+  font-size: var(--card-btn-font-size);
+  font-weight: var(--card-btn-font-weight);
+  line-height: var(--card-btn-line-height);
+  color: var(--card-btn-color);
+  text-align: center;
+  position: var(--card-position);
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: var(--card-btn-border-width) solid var(--card-btn-border-color);
+  -webkit-border-radius: var(--card-btn-border-radius);
+  border-radius: var(--card-btn-border-radius);
+  background-color: var(--card-btn-bg);
+  -webkit-box-shadow: var(--card-btn-box-shadow);
+  box-shadow: var(--card-btn-box-shadow);
+  -webkit-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  -o-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+}
+
+.btn-soft-danger {
+  color: #731e14;
+  background: rgba(192, 50, 33, 0.2);
+  border-color: rgba(192, 50, 33, 0);
+  -webkit-box-shadow: unset;
+  box-shadow: unset;
+}
+.btn-soft-danger:hover {
+  color: #902619;
+  background: rgba(192, 50, 33, 0.4);
+  border-color: rgba(192, 50, 33, 0);
+}
+.btn-soft-danger:active {
+  color: #ad2d1e;
+  background: rgba(192, 50, 33, 0.6);
+  border-color: rgba(192, 50, 33, 0);
+  box-shadow: 0 0px 0px rgba(0, 0, 0, 0);
+}
+.btn-soft-danger:focus {
+  box-shadow: 115, 30, 20;
+}
+.btn-soft-danger:disabled {
+  color: #fff;
+  background: rgba(192, 50, 33, 0.2);
+  border-color: rgba(192, 50, 33, 0);
+}
+
+.btn-soft-success {
+  color: #106032;
+  background: rgba(26, 160, 83, 0.2);
+  border-color: rgba(26, 160, 83, 0);
+  -webkit-box-shadow: unset;
+  box-shadow: unset;
+}
+.btn-soft-success:hover {
+  color: #14783e;
+  background: rgba(26, 160, 83, 0.4);
+  border-color: rgba(26, 160, 83, 0);
+}
+.btn-soft-success:active {
+  color: #17904b;
+  background: rgba(26, 160, 83, 0.6);
+  border-color: rgba(26, 160, 83, 0);
+  box-shadow: 0 0px 0px rgba(0, 0, 0, 0);
+}
+.btn-soft-success:focus {
+  box-shadow: 16, 96, 50;
+}
+.btn-soft-success:disabled {
+  color: #fff;
+  background: rgba(26, 160, 83, 0.2);
+  border-color: rgba(26, 160, 83, 0);
+}
+
+.animated {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  animation-timing-function: ease-out;
+}
+
+/* stylelint-disable */
+@keyframes fwp-anim-fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.fwp-anim-fadeInLeft {
+  animation-name: fwp-anim-fadeInLeft;
+}
+
+@keyframes fwp-anim-fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.fwp-anim-fadeInUp {
+  animation-name: fwp-anim-fadeInUp;
+}
+
+@keyframes fwp-anim-fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.fwp-anim-fadeIn {
+  animation-name: fwp-anim-fadeIn;
+}
+
+@keyframes fwp-anim-animateIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.6) translateY(-8px);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.fwp-anim-animateIn {
+  animation-name: fwp-anim-fadeIn;
+}
+
+@keyframes fwp-anim-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.fwp-anim-spin {
+  animation-name: fwp-anim-spin;
+}
+
+/* stylelint-enable */
+#top-tab-list {
+  margin-bottom: 60px;
+  --fwp-primary: #2183f493;
+}
+#top-tab-list li a {
+  color: var(--fwp-primary);
+  background: var(--fwp-primary-tint-80);
+  display: block;
+  padding: 0.938rem;
+  text-decoration: none;
+  font-size: 1.125rem;
+  border-radius: ".25rem";
+}
+#top-tab-list li a .iq-icon {
+  display: inline-block;
+  text-align: center;
+  height: 3.125rem;
+  width: 3.125rem;
+  line-height: 3.125rem;
+  font-size: 1.25rem;
+  border-radius: 5px;
+  background: var(--fwp-primary);
+  color: #fff;
+}
+#top-tab-list li.active a {
+  background: var(--fwp-primary);
+  color: #fff;
+}
+#top-tab-list li.active a .iq-icon {
+  background: #fff;
+  color: var(--fwp-primary);
+}
+#top-tab-list li.active.done a {
+  background: #1aa053;
+}
+#top-tab-list li.active.done a i {
+  color: #1aa053;
+}
+#top-tab-list li#confirm.active a {
+  background: #1aa053;
+}
+#top-tab-list li#confirm.active a i {
+  color: #1aa053;
+}
+
+#register-existing-account-wizard fieldset {
+  display: none;
+}
+#register-existing-account-wizard fieldset.active {
+  display: block;
+}
+
+/* Including parts. */
+.categoryLiquid {
+  height: 30px;
+  width: 100%;
+  background: #fff;
+}
+.categoryLiquid .category-bar {
+  width: 100%;
+  list-style: none;
+  position: relative;
+  z-index: 9;
+  padding: 0 11px;
+  display: flex;
+  justify-content: space-around;
+  max-width: 1250px;
+  margin: auto;
+}
+.categoryLiquid .category-bar .category-top {
+  box-sizing: border-box;
+  width: auto;
+  height: 30px;
+  text-align: left;
+  font-size: 0;
+  cursor: pointer;
+  display: inline-block;
+  float: left;
+  -webkit-tap-highlight-color: transparent;
+}
+.categoryLiquid .category-bar .category-top a, .categoryLiquid .category-bar .category-top span {
+  display: block;
+  height: 100%;
+  color: #3c3c3c;
+  text-decoration: none;
+}
+.categoryLiquid .category-bar .category-top a .full-name, .categoryLiquid .category-bar .category-top span .full-name {
+  display: none;
+  font-size: 14px;
+}
+@media (min-width: 37.5em) {
+  .categoryLiquid .category-bar .category-top a .full-name, .categoryLiquid .category-bar .category-top span .full-name {
+    font-size: 10px;
+  }
+}
+@media (min-width: 48em) {
+  .categoryLiquid .category-bar .category-top a .full-name, .categoryLiquid .category-bar .category-top span .full-name {
+    display: inline-block;
+    font-size: 12px;
+  }
+}
+.categoryLiquid .category-bar .category-top a .short-name, .categoryLiquid .category-bar .category-top span .short-name {
+  display: none;
+  font-size: 14px;
+}
+@media (max-width: 47.99em) {
+  .categoryLiquid .category-bar .category-top a .short-name, .categoryLiquid .category-bar .category-top span .short-name {
+    display: inline-block;
+  }
+}
+.categoryLiquid .category-bar .category-top .icon, .categoryLiquid .category-bar .category-top span[class*=icon-] {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-origin: padding-box;
+  display: -webkit-inline-box;
+  position: relative;
+  height: 20px;
+  width: 20px;
+  margin-right: 5px;
+  top: 5px;
+}
+.categoryLiquid .category-bar .category-top .icon img {
+  height: 100%;
+  width: 100%;
+  border-radius: 5px;
+}
+.categoryLiquid .category-bar .category-top .icon + span {
+  position: relative;
+}
+.categoryLiquid .category-bar .category-top .more-btn {
+  display: block;
+  height: 100%;
+  padding-top: 5px;
+  color: #3c3c3c;
+  text-decoration: none;
+  padding-top: 0;
+}
+.categoryLiquid .category-bar .category-top .more-btn .icon {
+  display: inline-block;
+  height: 20px;
+  width: auto;
+  max-width: 20px;
+  margin-bottom: -5px;
+  margin-right: 3px;
+}
+.categoryLiquid .category-bar .category-top .more-btn:hover + .more-category-list {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+}
+.categoryLiquid .category-bar .category-top .more-category-list {
+  position: absolute;
+  top: 32px;
+  right: 0;
+  width: 248px;
+  padding: 8px 0 7px;
+  background-image: linear-gradient(180deg, transparent, transparent 2px, #fff 0, #fff);
+  box-shadow: 2px 2px 2px 0 rgba(175, 174, 165, 0.5);
+  transition: all 0.3s ease;
+  z-index: 11;
+  padding: 15px;
+  width: 100%;
+  max-width: 100vw;
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+  border-radius: 5px;
+}
+.categoryLiquid .category-bar .category-top .more-category-list.mega-menus > ul {
+  display: flex;
+  opacity: 1;
+  visibility: visible;
+  flex-wrap: wrap;
+}
+.categoryLiquid .category-bar .category-top .more-category-list.mega-menus > ul li {
+  min-width: 20%;
+  width: 25%;
+}
+.categoryLiquid .category-bar .category-top .more-category-list:hover {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+}
+.categoryLiquid .category-bar .category-top .more-category-list:not(.mega-menus) {
+  width: auto;
+  min-width: 200px;
+}
+.categoryLiquid .category-bar .category-top .more-category-list:not(.mega-menus) > li {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+  float: unset;
+}
+@media (max-width: 47.99em) {
+  .categoryLiquid .category-bar > .category-top:nth-child(6), .categoryLiquid .category-bar > .category-top:nth-child(7) {
+    display: none;
+  }
+}
+@media (max-width: 37.49em) {
+  .categoryLiquid .category-bar > .category-top:nth-child(4n), .categoryLiquid .category-bar > .category-top:nth-child(5) {
+    display: none;
+  }
+}
+@media (max-width: 28.115em) {
+  .categoryLiquid {
+    display: none;
+  }
+}
+
+.icon-best-ads {
+  display: none;
+  height: 0;
+  width: 0;
+}
+
+#fwplistivoamchartsmap {
+  margin: auto;
+  width: 100%;
+  max-width: 80rem;
+  min-height: 300px;
+  max-height: 100vh;
+}
+#fwplistivoamchartsmap .leaflet-pane {
+  z-index: 1;
+}
+#fwplistivoamchartsmap .leaflet-control-container .leaflet-control-attribution a[href*=leafletjs], #fwplistivoamchartsmap .leaflet-control-container .leaflet-control-attribution a[href*=leafletjs] + span {
+  display: none;
+}
+
+/* General Settings */
+.modal-backdrop.fade.show {
+  display: none;
+}
+
+.input-group span[id^=basic-editopen-] {
+  border-radius: 0 5px 5px 0 !important;
+}
+@media (max-width: 31.25em) {
+  .input-group.input-group .input-group-text[id^=basic-pre-addons] {
+    display: none;
+  }
+}
+@media (max-width: 34.375em) {
+  .input-group.input-group .input-group-text[id^=basic-pre-addons] {
+    max-width: 180px;
+    overflow: hidden;
+  }
+}
+
+.direct-download-btn {
+  display: block;
+  width: 50px;
+  height: 30px;
+}
+.direct-download-btn svg.icon-32 {
+  width: 25px;
+  height: 25px;
+  display: block;
+  margin: auto;
+  margin-top: 3px;
+}
+
+.input-group-text.password-toggle:not(.showing) .shown {
+  display: none;
+}
+
+.input-group-text.password-toggle.showing .hiden {
+  display: none;
+}
+
+div.wpforms-container-full .wpforms-form .wpforms-field {
+  margin-left: auto;
+  padding: 10px;
+}
+div.wpforms-container-full .wpforms-form .wpforms-field input, div.wpforms-container-full .wpforms-form .wpforms-field select {
+  min-width: 100%;
+  width: 100%;
+  border-radius: 5px !important;
+  border: 0.5px solid #8d8d8d !important;
+  padding: 5px 10px;
+  margin: auto;
+}
+div.wpforms-container-full .wpforms-form .wpforms-field textarea {
+  height: 200px;
+}
+div.wpforms-container-full .wpforms-form .wpforms-field .wpforms-field-label {
+  color: #333;
+  font-size: 16px;
+  margin-bottom: 5px;
+  text-decoration: none;
+}
+div.wpforms-container-full .wpforms-form .wpforms-field.wpforms-field-name {
+  width: 100%;
+  display: block;
+}
+div.wpforms-container-full .wpforms-form .wpforms-field.wpforms-field-name .wpforms-field-row {
+  display: block;
+  min-width: 100%;
+}
+
+.profile-image-preview {
+  height: 0;
+  opacity: 0;
+  width: 200px;
+  margin: auto;
+  overflow: hidden;
+  visibility: hidden;
+  transition: all 0.7s ease;
+}
+.profile-image-preview.active {
+  height: 200px;
+  opacity: 1;
+  visibility: visible;
+}
+.profile-image-preview.active img {
+  height: 100%;
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 2px 0 5px #ddd;
+}
+
+.fwp-body .card .card-header {
+  align-items: center;
+}
+
+.fwp-body div.wpforms-container-full .wpforms-form .wpforms-field {
+  align-items: center;
+  margin-bottom: 25px;
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: calc(-1 * var(--bs-gutter-y));
+}
+.fwp-body div.wpforms-container-full .wpforms-form .wpforms-field .wpforms-field-label {
+  font-size: 22px;
+  margin-left: 10px;
+}
+.fwp-body div.wpforms-container-full .wpforms-form .wpforms-field.wpforms-field-name {
+  margin-right: 0 !important;
+}
+.fwp-body div.wpforms-container-full .wpforms-form .wpforms-field.wpforms-field-name:first-child {
+  margin-bottom: 0;
+}
+.fwp-body div.wpforms-container-full .wpforms-form .wpforms-field.wpforms-field-name .wpforms-field-row-block.wpforms-one-half:first-child {
+  padding-left: 0 !important;
+}
+.fwp-body div.wpforms-container-full .wpforms-form .wpforms-field.wpforms-field-name .wpforms-field-row-block.wpforms-one-half:last-child {
+  padding-right: 0 !important;
+}
+.fwp-body div.wpforms-container-full .wpforms-form .wpforms-field-stripe-credit-card-cardnumber,
+.fwp-body div.wpforms-container-full .wpforms-form .wpforms-field input, .fwp-body div.wpforms-container-full .wpforms-form .wpforms-field select {
+  border-radius: 2px;
+  background-color: #F5F7F8;
+  width: 100%;
+  height: 68px;
+  border: solid 2px transparent !important;
+  transition: 0.3s all linear;
+  padding-left: 20px;
+  font-size: 15px;
+  color: #898989;
+}
+.fwp-body div.wpforms-container-full .wpforms-form .wpforms-field input:focus {
+  outline: none;
+  border-color: #008F9C !important;
+  background-color: #fff;
+}
+@media (min-width: 37.5em) {
+  .fwp-body div.wpforms-container-full .wpforms-form .wpforms-one-half {
+    width: 48%;
+  }
+}
+.fwp-body div.wpforms-container-full .wpforms-form .wpforms-field-row {
+  width: 100%;
+  max-width: unset;
+}
+.fwp-body div.wpforms-container-full .wpforms-form .wpforms-field-stripe-credit-card-cardnumber {
+  height: 40px;
+}
+.fwp-body div.wpforms-container-full .wpforms-form .wpforms-field select {
+  padding-right: 10px;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+.fwp-body div.wpforms-container-full .wpforms-form .wpforms-field.wpforms-field-payment-single {
+  display: block !important;
+}
+.fwp-body div.wpforms-container-full .wpforms-form .wpforms-field.wpforms-field-payment-single.wpforms-single-item-price .wpforms-price {
+  font-size: 18px;
+  font-weight: 500;
+  color: #848C95;
+}
+.fwp-body div.wpforms-container-full .wpforms-form .wpforms-field.wpforms-field-payment-single .wpforms-single-item-price {
+  margin: auto;
+  margin-top: 20px;
+}
+.fwp-body div.wpforms-container-full .wpforms-form .wpforms-field.wpforms-field-payment-single .wpforms-single-item-price .wpforms-price {
+  font-size: 30px;
+}
+.fwp-body div.wpforms-container-full .wpforms-form .wpforms-field.wpforms-field-pagebreak {
+  text-align: center;
+  display: block;
+}
+.fwp-body div.wpforms-container-full .wpforms-form .wpforms-field.wpforms-field-pagebreak .wpforms-clear {
+  text-align: center;
+}
+.fwp-body div.wpforms-container-full .wpforms-form .wpforms-field.wpforms-field-pagebreak .wpforms-clear .wpforms-page-next {
+  background-color: #72b239;
+  color: #fff;
+  font-size: 1.5rem;
+  padding: 20px 30px;
+  border-radius: 15px;
+}
+.fwp-body div.wpforms-container-full .wpforms-form .wpforms-field.wpforms-field-pagebreak .wpforms-clear .wpforms-page-next:after {
+  content: "";
+  margin-left: 0px;
+  opacity: 0.5;
+  transition: all 0.7s ease;
+}
+.fwp-body div.wpforms-container-full .wpforms-form .wpforms-field.wpforms-field-pagebreak .wpforms-clear .wpforms-page-next:hover:after {
+  content: "→";
+  opacity: 1;
+  margin-left: 10px;
+}
+.fwp-body div.wpforms-container-full .wpforms-form .wpforms-field.wpforms-field-address {
+  display: block;
+}
+.fwp-body div.wpforms-container-full .wpforms-form .wpforms-field .wpforms-field-row {
+  max-width: unset;
+}
+@media (max-width: 37.5em) {
+  .fwp-body div.wpforms-container-full .wpforms-form .wpforms-field {
+    margin: auto;
+  }
+}
+.fwp-body div.wpforms-container-full .wpforms-form textarea.wpforms-field-large {
+  border: 0.5px solid #eee;
+  border-radius: 5px;
+  border: none;
+}
+.fwp-body div.wpforms-container-full .wpforms-form .wpforms-error-container {
+  padding: 10px;
+  background: rgba(255, 223, 77, 0.9411764706);
+  margin-bottom: 20px;
+  border: none;
+  font-size: 18px;
+  color: #333;
+  font-weight: bolder;
+  -webkit-text-stroke: 0.6px #333;
+  -webkit-text-stroke-width: medium;
+}
+.fwp-body div.wpforms-container-full .wpforms-form .wpforms-field-stripe-credit-card {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+.fwp-body div.wpforms-container-full .wpforms-submit-container {
+  text-align: center;
+}
+.fwp-body div.wpforms-container-full .wpforms-submit-container .wpforms-submit {
+  min-width: 200px;
+  margin-bottom: 50px;
+  background-color: #72b239;
+  color: #fff;
+  font-size: 1.2rem;
+  border-radius: 5px;
+}
+.fwp-body div.wpforms-container-full .wpforms-submit-container .wpforms-submit + img {
+  position: absolute;
+  top: 20px;
+}
+.fwp-body div.wpforms-container-full .wpforms-field-container .wpforms-page {
+  max-width: 95vw;
+  margin: auto;
+  position: relative;
+  display: block;
+  padding: 20px;
+}
+
+@media (max-width: 600px) {
+  .content .container .container_inner.page_container_inner, .content .full_page_container_inner {
+    padding: 10px 0 0;
+    margin: auto;
+    width: auto;
+    max-width: 90vw;
+  }
+  div.wpforms-container-full .wpforms-form .wpforms-field.wpforms-field-name .wpforms-field-row .wpforms-field-row-block {
+    width: 100% !important;
+  }
+  .fwp-body .wpforms-container-full .wpforms-form .wpforms-one-half {
+    width: 100%;
+    margin: auto;
+  }
+  .fwp-body .wpforms-container-full .wpforms-form .wpforms-one-half:nth-child(2) {
+    margin-top: 20px;
+  }
+}
+.fwp-body .content {
+  padding-bottom: 0 !important;
+}
+.fwp-body .content .content_inner {
+  background: rgba(255, 255, 255, 0.6196078431);
+}
+.fwp-body .content .content_inner .container.content-inner {
+  border-radius: 10px;
+  background: none;
+}
+@media (max-width: 62em) {
+  .fwp-body .content .content_inner .container.content-inner .row > .col-lg-3 {
+    order: 1;
+    margin-top: 20px;
+  }
+}
+.fwp-body .main-content .iq-navbar-header {
+  height: 215px;
+}
+.fwp-body .main-content .nav-pills .nav-link {
+  font-size: 15px;
+  color: #333;
+}
+.fwp-body .main-content .nav-pills .nav-link:hover, .fwp-body .main-content .nav-pills .nav-link:focus, .fwp-body .main-content .nav-pills .nav-link:active {
+  color: #333;
+}
+.fwp-body .main-content .nav-pills .nav-link.active, .fwp-body .main-content .nav-pills .show > .nav-link {
+  color: #333;
+  background-color: #FFCF02;
+}
+.fwp-body.no-header-bg .content {
+  margin-top: -50px;
+  padding: unset;
+  background: rgba(255, 255, 255, 0.6196078431);
+}
+.fwp-body.no-header-bg .content .content_inner {
+  background: none;
+  padding-bottom: 80px;
+}
+@media (max-width: 34.375em) {
+  .fwp-body.no-header-bg .content .content_inner .card-body .btn-logout-confirm {
+    width: 100%;
+    margin-top: 5px;
+    border-radius: 10px;
+  }
+}
+.fwp-body.no-header-bg .content .main-content .iq-navbar-header {
+  height: 150px;
+}
+.fwp-body.no-header-bg .content .container {
+  background: none;
+}
+.fwp-body.no-header-bg .content .container.content-inner .row > div > .card.h-12 {
+  margin-bottom: 2rem;
+  height: 100%;
+}
+.fwp-body .pause-unpause-subscription-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-between;
+}
+.fwp-body .btn-check:active + .btn.btn-light-primary, .fwp-body .btn-check:checked + .btn.btn-light-primary, .fwp-body .btn.btn-light-primary.active, .fwp-body .btn.btn-light-primary.show, .fwp-body .btn.btn-light-primary:active:not(.btn-active), .fwp-body .btn.btn-light-primary:focus:not(.btn-active), .fwp-body .btn.btn-light-primary:hover:not(.btn-active), .fwp-body .show > .btn.btn-light-primary,
+.fwp-body .btn.btn-primary, .fwp-body .btn-check:active + .btn.btn-primary, .fwp-body .btn-check:checked + .btn.btn-primary, .fwp-body .btn.btn-primary.active, .fwp-body .btn.btn-primary.show, .fwp-body .btn.btn-primary:active:not(.btn-active), .fwp-body .btn.btn-primary:focus:not(.btn-active), .fwp-body .btn.btn-primary:hover:not(.btn-active), .fwp-body .show > .btn.btn-primary {
+  color: #333;
+  border-color: #FFCF02;
+  background-color: #FFCF02;
+}
+.fwp-body .btn-check:active + .btn.btn-light-primary:hover, .fwp-body .btn-check:active + .btn.btn-light-primary:active, .fwp-body .btn-check:active + .btn.btn-light-primary:focus, .fwp-body .btn-check:checked + .btn.btn-light-primary:hover, .fwp-body .btn-check:checked + .btn.btn-light-primary:active, .fwp-body .btn-check:checked + .btn.btn-light-primary:focus, .fwp-body .btn.btn-light-primary.active:hover, .fwp-body .btn.btn-light-primary.active:active, .fwp-body .btn.btn-light-primary.active:focus, .fwp-body .btn.btn-light-primary.show:hover, .fwp-body .btn.btn-light-primary.show:active, .fwp-body .btn.btn-light-primary.show:focus, .fwp-body .btn.btn-light-primary:active:not(.btn-active):hover, .fwp-body .btn.btn-light-primary:active:not(.btn-active):active, .fwp-body .btn.btn-light-primary:active:not(.btn-active):focus, .fwp-body .btn.btn-light-primary:focus:not(.btn-active):hover, .fwp-body .btn.btn-light-primary:focus:not(.btn-active):active, .fwp-body .btn.btn-light-primary:focus:not(.btn-active):focus, .fwp-body .btn.btn-light-primary:hover:not(.btn-active):hover, .fwp-body .btn.btn-light-primary:hover:not(.btn-active):active, .fwp-body .btn.btn-light-primary:hover:not(.btn-active):focus, .fwp-body .show > .btn.btn-light-primary:hover, .fwp-body .show > .btn.btn-light-primary:active, .fwp-body .show > .btn.btn-light-primary:focus,
+.fwp-body .btn.btn-primary:hover,
+.fwp-body .btn.btn-primary:active,
+.fwp-body .btn.btn-primary:focus, .fwp-body .btn-check:active + .btn.btn-primary:hover, .fwp-body .btn-check:active + .btn.btn-primary:active, .fwp-body .btn-check:active + .btn.btn-primary:focus, .fwp-body .btn-check:checked + .btn.btn-primary:hover, .fwp-body .btn-check:checked + .btn.btn-primary:active, .fwp-body .btn-check:checked + .btn.btn-primary:focus, .fwp-body .btn.btn-primary.active:hover, .fwp-body .btn.btn-primary.active:active, .fwp-body .btn.btn-primary.active:focus, .fwp-body .btn.btn-primary.show:hover, .fwp-body .btn.btn-primary.show:active, .fwp-body .btn.btn-primary.show:focus, .fwp-body .btn.btn-primary:active:not(.btn-active):hover, .fwp-body .btn.btn-primary:active:not(.btn-active):active, .fwp-body .btn.btn-primary:active:not(.btn-active):focus, .fwp-body .btn.btn-primary:focus:not(.btn-active):hover, .fwp-body .btn.btn-primary:focus:not(.btn-active):active, .fwp-body .btn.btn-primary:focus:not(.btn-active):focus, .fwp-body .btn.btn-primary:hover:not(.btn-active):hover, .fwp-body .btn.btn-primary:hover:not(.btn-active):active, .fwp-body .btn.btn-primary:hover:not(.btn-active):focus, .fwp-body .show > .btn.btn-primary:hover, .fwp-body .show > .btn.btn-primary:active, .fwp-body .show > .btn.btn-primary:focus {
+  border-color: #FFCF02;
+  background-color: #FFCF02 !important;
+}
+.fwp-body .btn.btn-light-primary {
+  color: #FFCF02;
+  border-color: rgba(255, 207, 2, 0.1215686275);
+  background-color: rgba(255, 207, 2, 0.1215686275);
+}
+.fwp-body .btn.btn-light-primary:hover, .fwp-body .btn.btn-light-primary:active {
+  border-color: #FFCF02;
+  background-color: #FFCF02 !important;
+}
+.fwp-body .custom-table-effect .table tbody tr:after {
+  background: rgba(255, 207, 2, 0.1215686275);
+}
+.fwp-body .custom-table-effect .table tbody tr:hover:after {
+  background: #FFCF02;
+}
+.fwp-body .dropzone {
+  background-color: rgba(255, 207, 2, 0.1215686275);
+  border-color: #FFCF02;
+}
+.fwp-body .dropzone .dz-preview.dz-file-preview .dz-image {
+  background: rgba(255, 207, 2, 0.1215686275);
+}
+.fwp-body .form-select.form-select-solid {
+  background: rgba(255, 207, 2, 0.0509803922);
+  border-color: rgba(255, 207, 2, 0.0509803922);
+}
+.fwp-body .text-primary {
+  color: #FFCF02 !important;
+}
+.fwp-body .bg-primary {
+  background: #FFCF02 !important;
+}
+.fwp-body .input-group span[id^=basic-editopen-] i.fa-check {
+  color: #FFCF02;
+}
+.fwp-body #igho-toast-container > div.toast info {
+  background-color: rgba(255, 209, 2, 0.7058823529);
+  border-color: #FFCF02;
+}
+@media (max-width: 30em) {
+  .fwp-body #igho-toast-container > div {
+    width: auto;
+  }
+}
+.fwp-body .swal2-actions .swal2-styled.swal2-confirm {
+  color: #333;
+  background-color: #FFCF02;
+}
+.fwp-body .swal2-actions .swal2-loader {
+  background: none;
+  border-color: none;
+  border-top-color: #FFCF02;
+  border-bottom-color: #FFCF02;
+}
+
+/**
+Registration Form Design
+*/
+.fwp-body div.wpforms-container-full .wpforms-form label.wpforms-error {
+  font-size: 15px;
+  margin-top: 10px;
+}
+.fwp-body .input-group.input-group-solid .form-control + .input-group-text {
+  border-left-color: transparent;
+}
+.fwp-body .input-group-text {
+  border-color: transparent;
+}
+.fwp-body .input-group-text:first-child {
+  padding-right: 5px;
+}
+.fwp-body .input-group-text:first-child + input {
+  border-left-color: transparent;
+}
+@media (min-width: 31.25em) {
+  .fwp-body .input-group-text:first-child + input {
+    padding-left: 5px;
+  }
+}
+.fwp-body .btn-outline-warning {
+  color: #333;
+  border-color: #FFCF02;
+  background-color: #FFCF02;
+}
+.fwp-body .upload-icone {
+  height: 35px;
+  width: 35px;
+}
+.fwp-body .profile-img-edit input.file-upload.profile-image-upload {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background: #333;
+  opacity: 0;
+  visibility: visible;
+  display: block;
+}
+@media (max-width: 34.375em) {
+  .fwp-body .nav-pills .nav-item {
+    width: 100%;
+    background: #D3D3D3;
+    margin-right: auto;
+    margin-top: 5px;
+    border-radius: 10px;
+  }
+}
+
+/*# sourceMappingURL=public.css.map*/
