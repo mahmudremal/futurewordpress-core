@@ -15,6 +15,8 @@ class Project {
 	protected function __construct() {
 
 		// Load class.
+		Requests::get_instance();
+		Cronjob::get_instance();
 		Helpers::get_instance();
 		Assets::get_instance();
 		Option::get_instance();
