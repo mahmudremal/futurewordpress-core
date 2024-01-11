@@ -5,21 +5,19 @@
  * 
  * @package FutureWordPressScratchProject
  */
-namespace FUTUREWORDPRESS_PROJECT_SCRATCH\Inc;
-use FUTUREWORDPRESS_PROJECT_SCRATCH\Inc\Traits\Singleton;
+namespace FUTUREWORDPRESS_PROJECT_CORE\Inc;
+use FUTUREWORDPRESS_PROJECT_CORE\Inc\Traits\Singleton;
 
 class Option {
-
-  use Singleton;
-  private $dir;
-  private $file;
+	use Singleton;
+	private $dir;
+	private $file;
 	private $plugin_name;
 	private $plugin_slug;
 	private $textdomain;
 	private $options;
 	private $settings;
 	private $general;
-
 	protected function __construct() {
 		$this->setup_hooks();
 	}

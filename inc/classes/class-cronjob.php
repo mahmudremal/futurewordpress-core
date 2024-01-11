@@ -14,15 +14,15 @@ class Cronjob {
 	public $base_ajax = null;
 	protected function __construct() {
 		// load class.
-		$this->setup_hooks();
+		// $this->setup_hooks();
 	}
 	protected function setup_hooks() {
 		
-		// register_activation_hook(GRAVITYFORMS_FLUTTERWAVE_ADDONS__FILE__, [$this, 'register_scheduled_hook']);
-		// register_deactivation_hook(GRAVITYFORMS_FLUTTERWAVE_ADDONS__FILE__, [$this, 'unregister_scheduled_hook']);
+		register_activation_hook(GRAVITYFORMS_FLUTTERWAVE_ADDONS__FILE__, [$this, 'register_scheduled_hook']);
+		register_deactivation_hook(GRAVITYFORMS_FLUTTERWAVE_ADDONS__FILE__, [$this, 'unregister_scheduled_hook']);
 
-		// add_action('init_scheduled_callback', [$this, 'init_scheduled_callback'], 10, 1);
-		// add_filter('cron_schedules', [$this, 'cron_schedules'], 10, 1);
+		add_action('init_scheduled_callback', [$this, 'init_scheduled_callback'], 10, 1);
+		add_filter('cron_schedules', [$this, 'cron_schedules'], 10, 1);
 		
 	}
 

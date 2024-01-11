@@ -6,7 +6,6 @@
  */
 
 namespace FUTUREWORDPRESS_PROJECT_CORE\Inc;
-
 use FUTUREWORDPRESS_PROJECT_CORE\Inc\Traits\Singleton;
 
 class Project {
@@ -16,10 +15,10 @@ class Project {
 
 		// Load class.
 		Requests::get_instance();
-		Cronjob::get_instance();
+		// Cronjob::get_instance();
 		Helpers::get_instance();
 		Assets::get_instance();
-		Option::get_instance();
+		// Option::get_instance();
 		Menus::get_instance();
 		Core::get_instance();
 
